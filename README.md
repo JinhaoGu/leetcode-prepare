@@ -1,0 +1,175 @@
+# 30-Day LeetCode Interview Preparation Plan
+
+> 面向初学者的 LeetCode 刷题计划 —— 每天 2-4 题，30 天覆盖面试核心算法
+
+## 如何使用本计划
+
+1. **按顺序刷**：每天完成当天的题目，先看题解理解思路，再自己手写一遍
+2. **每道题三遍**：第一遍看题解理解，第二遍自己写，第三遍限时写
+3. **做笔记**：每道题记录自己的易错点和心得
+4. **每周日复习**：回顾本周做过的所有题目，重做错题
+
+## 题目分类总览
+
+| 算法分类 | 天数 | 题数 | 难度 |
+|---------|------|------|------|
+| Arrays & Hashing | Day 1-2 | 6 | Easy-Medium |
+| Two Pointers | Day 3-4 | 5 | Easy-Hard |
+| Sliding Window | Day 5-6 | 4 | Easy-Hard |
+| Stack | Day 7 | 4 | Easy-Medium |
+| Binary Search | Day 8-9 | 5 | Easy-Medium |
+| Linked List | Day 10-11 | 5 | Easy-Medium |
+| Trees | Day 12-13 | 7 | Easy-Medium |
+| Recursion & Backtracking | Day 14 | 4 | Medium |
+| Dynamic Programming | Day 15-17 | 8 | Easy-Hard |
+| Greedy | Day 18 | 3 | Medium |
+| Graphs | Day 19-21 | 6 | Medium-Hard |
+| Heap / Priority Queue | Day 22-23 | 3 | Medium-Hard |
+| Intervals | Day 24 | 3 | Medium |
+| Review & Mock | Day 25-30 | 混合 | Mixed |
+
+---
+
+## 每日计划
+
+### Week 1: 基础数据结构
+
+| Day | 主题 | 题目 | 难度 | 题解文件 |
+|-----|------|------|------|---------|
+| 1 | Arrays & Hashing | Two Sum | Easy | [arrays-hashing.md](arrays-hashing.md) |
+| 1 | Arrays & Hashing | Contains Duplicate | Easy | [arrays-hashing.md](arrays-hashing.md) |
+| 1 | Arrays & Hashing | Valid Anagram | Easy | [arrays-hashing.md](arrays-hashing.md) |
+| 2 | Arrays & Hashing | Group Anagrams | Medium | [arrays-hashing.md](arrays-hashing.md) |
+| 2 | Arrays & Hashing | Top K Frequent Elements | Medium | [arrays-hashing.md](arrays-hashing.md) |
+| 2 | Arrays & Hashing | Product of Array Except Self | Medium | [arrays-hashing.md](arrays-hashing.md) |
+| 3 | Two Pointers | Valid Palindrome | Easy | [two-pointers.md](two-pointers.md) |
+| 3 | Two Pointers | Two Sum II | Medium | [two-pointers.md](two-pointers.md) |
+| 4 | Two Pointers | 3Sum | Medium | [two-pointers.md](two-pointers.md) |
+| 4 | Two Pointers | Container With Most Water | Medium | [two-pointers.md](two-pointers.md) |
+| 4 | Two Pointers | Trapping Rain Water | Hard | [two-pointers.md](two-pointers.md) |
+| 5 | Sliding Window | Best Time to Buy and Sell Stock | Easy | [sliding-window.md](sliding-window.md) |
+| 5 | Sliding Window | Longest Substring Without Repeating | Medium | [sliding-window.md](sliding-window.md) |
+| 6 | Sliding Window | Longest Repeating Char Replacement | Medium | [sliding-window.md](sliding-window.md) |
+| 6 | Sliding Window | Minimum Window Substring | Hard | [sliding-window.md](sliding-window.md) |
+| 7 | Stack | Valid Parentheses | Easy | [stack.md](stack.md) |
+| 7 | Stack | Min Stack | Medium | [stack.md](stack.md) |
+| 7 | Stack | Evaluate Reverse Polish Notation | Medium | [stack.md](stack.md) |
+| 7 | Stack | Daily Temperatures | Medium | [stack.md](stack.md) |
+
+### Week 2: 核心算法
+
+| Day | 主题 | 题目 | 难度 | 题解文件 |
+|-----|------|------|------|---------|
+| 8 | Binary Search | Binary Search | Easy | [binary-search.md](binary-search.md) |
+| 8 | Binary Search | Search in Rotated Sorted Array | Medium | [binary-search.md](binary-search.md) |
+| 8 | Binary Search | Find Minimum in Rotated Sorted Array | Medium | [binary-search.md](binary-search.md) |
+| 9 | Binary Search | Search a 2D Matrix | Medium | [binary-search.md](binary-search.md) |
+| 9 | Binary Search | Koko Eating Bananas | Medium | [binary-search.md](binary-search.md) |
+| 10 | Linked List | Reverse Linked List | Easy | [linked-list.md](linked-list.md) |
+| 10 | Linked List | Merge Two Sorted Lists | Easy | [linked-list.md](linked-list.md) |
+| 10 | Linked List | Linked List Cycle | Easy | [linked-list.md](linked-list.md) |
+| 11 | Linked List | Remove Nth Node From End | Medium | [linked-list.md](linked-list.md) |
+| 11 | Linked List | Reorder List | Medium | [linked-list.md](linked-list.md) |
+| 12 | Trees | Maximum Depth of Binary Tree | Easy | [trees.md](trees.md) |
+| 12 | Trees | Invert Binary Tree | Easy | [trees.md](trees.md) |
+| 12 | Trees | Same Tree | Easy | [trees.md](trees.md) |
+| 12 | Trees | Subtree of Another Tree | Easy | [trees.md](trees.md) |
+| 13 | Trees | Binary Tree Level Order Traversal | Medium | [trees.md](trees.md) |
+| 13 | Trees | Validate Binary Search Tree | Medium | [trees.md](trees.md) |
+| 13 | Trees | Lowest Common Ancestor of BST | Medium | [trees.md](trees.md) |
+| 14 | Recursion & Backtracking | Subsets | Medium | [recursion-backtracking.md](recursion-backtracking.md) |
+| 14 | Recursion & Backtracking | Combination Sum | Medium | [recursion-backtracking.md](recursion-backtracking.md) |
+| 14 | Recursion & Backtracking | Permutations | Medium | [recursion-backtracking.md](recursion-backtracking.md) |
+| 14 | Recursion & Backtracking | Word Search | Medium | [recursion-backtracking.md](recursion-backtracking.md) |
+
+### Week 3: 进阶算法
+
+| Day | 主题 | 题目 | 难度 | 题解文件 |
+|-----|------|------|------|---------|
+| 15 | Dynamic Programming | Climbing Stairs | Easy | [dynamic-programming.md](dynamic-programming.md) |
+| 15 | Dynamic Programming | Min Cost Climbing Stairs | Easy | [dynamic-programming.md](dynamic-programming.md) |
+| 15 | Dynamic Programming | House Robber | Medium | [dynamic-programming.md](dynamic-programming.md) |
+| 16 | Dynamic Programming | Coin Change | Medium | [dynamic-programming.md](dynamic-programming.md) |
+| 16 | Dynamic Programming | Longest Increasing Subsequence | Medium | [dynamic-programming.md](dynamic-programming.md) |
+| 16 | Dynamic Programming | Unique Paths | Medium | [dynamic-programming.md](dynamic-programming.md) |
+| 17 | Dynamic Programming | Word Break | Medium | [dynamic-programming.md](dynamic-programming.md) |
+| 17 | Dynamic Programming | Edit Distance | Hard | [dynamic-programming.md](dynamic-programming.md) |
+| 18 | Greedy | Jump Game | Medium | [greedy.md](greedy.md) |
+| 18 | Greedy | Jump Game II | Medium | [greedy.md](greedy.md) |
+| 18 | Greedy | Gas Station | Medium | [greedy.md](greedy.md) |
+| 19 | Graphs | Number of Islands | Medium | [graphs.md](graphs.md) |
+| 19 | Graphs | Clone Graph | Medium | [graphs.md](graphs.md) |
+| 20 | Graphs | Course Schedule | Medium | [graphs.md](graphs.md) |
+| 20 | Graphs | Pacific Atlantic Water Flow | Medium | [graphs.md](graphs.md) |
+| 21 | Graphs | Rotting Oranges | Medium | [graphs.md](graphs.md) |
+| 21 | Graphs | Word Ladder | Hard | [graphs.md](graphs.md) |
+
+### Week 4: 强化 & 模拟面试
+
+| Day | 主题 | 题目 | 难度 | 题解文件 |
+|-----|------|------|------|---------|
+| 22 | Heap | Kth Largest Element in Array | Medium | [heap.md](heap.md) |
+| 22 | Heap | Find Median from Data Stream | Hard | [heap.md](heap.md) |
+| 23 | Heap | Merge K Sorted Lists | Hard | [heap.md](heap.md) |
+| 24 | Intervals | Merge Intervals | Medium | [intervals.md](intervals.md) |
+| 24 | Intervals | Insert Interval | Medium | [intervals.md](intervals.md) |
+| 24 | Intervals | Non-overlapping Intervals | Medium | [intervals.md](intervals.md) |
+| 25-26 | 综合复习 | 重做 Week 1-3 的错题 | — | — |
+| 27-28 | 模拟面试 | 随机抽取 2 道 Medium + 1 道 Hard 限时完成 | — | — |
+| 29 | 查漏补缺 | 针对薄弱环节专项练习 | — | — |
+| 30 | 最后回顾 | 复习所有题解笔记，重点看易错点 | — | — |
+
+---
+
+## 算法分类速查
+
+| 你想练… | 打开这个文件 |
+|---------|------------|
+| 数组 / 哈希表 | [arrays-hashing.md](arrays-hashing.md) |
+| 双指针 | [two-pointers.md](two-pointers.md) |
+| 滑动窗口 | [sliding-window.md](sliding-window.md) |
+| 栈 | [stack.md](stack.md) |
+| 二分查找 | [binary-search.md](binary-search.md) |
+| 链表 | [linked-list.md](linked-list.md) |
+| 树 (DFS/BFS) | [trees.md](trees.md) |
+| 递归 & 回溯 | [recursion-backtracking.md](recursion-backtracking.md) |
+| 动态规划 | [dynamic-programming.md](dynamic-programming.md) |
+| 贪心 | [greedy.md](greedy.md) |
+| 图 (DFS/BFS) | [graphs.md](graphs.md) |
+| 堆 / 优先队列 | [heap.md](heap.md) |
+| 区间问题 | [intervals.md](intervals.md) |
+
+---
+
+## 难度说明
+
+| 标记 | 含义 | 目标时间 |
+|------|------|---------|
+| ★☆☆ / Easy | 基础题，必须秒杀 | 5-10 分钟 |
+| ★★☆ / Medium | 面试常考，核心题 | 15-25 分钟 |
+| ★★★ / Hard | 进阶题，冲击大厂 | 30-45 分钟 |
+
+---
+
+## 学习建议
+
+### 每道题的三遍法
+
+1. **第一遍（理解）**：读题 → 看题解 → 理解思路 → 抄写代码
+2. **第二遍（默写）**：不看题解，自己写出完整代码 → 跑通测试
+3. **第三遍（限时）**：计时完成，目标在面试时间内写出无 bug 代码
+
+### 如果卡住了
+
+1. 先思考 10-15 分钟，至少想出一个暴力解法
+2. 如果完全没有思路，看题解的"思路"部分，不要看代码
+3. 理解思路后，尝试自己写出代码
+4. 如果还是写不出，完整阅读题解代码，然后第二天重做
+
+### 关于编程语言
+
+本题解使用 **Python**（最易读、面试中最常用）。如果你用 Java/C++/JavaScript，思路完全相同，只需翻译语法即可。
+
+---
+
+> 坚持 30 天，你也可以通过算法面试。加油！

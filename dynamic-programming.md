@@ -81,7 +81,7 @@ dp[4] = dp[3] + dp[2] = 3 + 2 = 5
 ### 代码
 
 ```python
-# 方法一：标准 DP 数组
+# 方法一：标准 DP 数组（迭代）
 def climbStairs(n):
     if n <= 2:
         return n
@@ -95,10 +95,23 @@ def climbStairs(n):
 def climbStairs(n):
     if n <= 2:
         return n
-    a, b = 1, 2  # a=dp[i-2], b=dp[i-1]
+    a, b = 1, 2
     for i in range(3, n + 1):
-        a, b = b, a + b  # b 是新 dp[i], a 变成旧 b
+        a, b = b, a + b
     return b
+
+# 方法三：递归 + 记忆化 (Recursion + Memoization)
+# 展示自顶向下的 DP 思路
+def climbStairs(n):
+    memo = {1: 1, 2: 2}
+    
+    def dfs(i):
+        if i in memo:
+            return memo[i]
+        memo[i] = dfs(i - 1) + dfs(i - 2)
+        return memo[i]
+    
+    return dfs(n)
 ```
 
 ### 复杂度
@@ -262,8 +275,9 @@ dp[11]: 考虑用1→dp[10]+1, 用2→dp[9]+1, 用5→dp[6]+1
 ### 代码
 
 ```python
+# 方法一：自底向上 DP（迭代）
 def coinChange(coins, amount):
-    INF = amount + 1  # 用 amount+1 代替无穷大
+    INF = amount + 1
     dp = [INF] * (amount + 1)
     dp[0] = 0
 
@@ -273,6 +287,26 @@ def coinChange(coins, amount):
                 dp[i] = min(dp[i], dp[i - coin] + 1)
 
     return dp[amount] if dp[amount] != INF else -1
+
+# 方法二：自顶向下 DP（递归 + 记忆化）
+def coinChange(coins, amount):
+    memo = {0: 0}
+    
+    def dfs(rem):
+        if rem < 0:
+            return float('inf')
+        if rem in memo:
+            return memo[rem]
+        
+        min_coins = float('inf')
+        for coin in coins:
+            min_coins = min(min_coins, dfs(rem - coin) + 1)
+        
+        memo[rem] = min_coins
+        return min_coins
+    
+    result = dfs(amount)
+    return result if result != float('inf') else -1
 ```
 
 ### 复杂度

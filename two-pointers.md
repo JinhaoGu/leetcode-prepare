@@ -184,6 +184,8 @@ def twoSum(numbers, target):
 
 ### 思路讲解
 
+### 方法一：排序 + 双指针 ⭐ 推荐
+
 **关键思路：把 3Sum 转化为 2Sum！**
 
 1. 先排序数组
@@ -209,8 +211,6 @@ i=2, nums[2]=-1:  ← 和i=1值相同, 跳过(去重)
 - 固定数去重：`if i > 0 and nums[i] == nums[i-1]: continue`
 - 找到解后去重：找到一组后，跳过所有重复的 L 和 R
 
-### 代码
-
 ```python
 def threeSum(nums):
     nums.sort()
@@ -218,26 +218,19 @@ def threeSum(nums):
     n = len(nums)
 
     for i in range(n - 2):
-        # 去重：跳过重复的固定数
         if i > 0 and nums[i] == nums[i - 1]:
             continue
-
-        # 优化：如果最小的三个数之和都 > 0，后面不可能有解
         if nums[i] + nums[i+1] + nums[i+2] > 0:
             break
-
-        # 优化：如果当前数+最大的两个数 < 0，当前数太小，继续
         if nums[i] + nums[n-2] + nums[n-1] < 0:
             continue
 
         left, right = i + 1, n - 1
-        target = -nums[i]  # 要找的两数之和
-
+        target = -nums[i]
         while left < right:
             cur_sum = nums[left] + nums[right]
             if cur_sum == target:
                 result.append([nums[i], nums[left], nums[right]])
-                # 去重
                 while left < right and nums[left] == nums[left + 1]:
                     left += 1
                 while left < right and nums[right] == nums[right - 1]:
@@ -248,9 +241,40 @@ def threeSum(nums):
                 left += 1
             else:
                 right -= 1
-
     return result
 ```
+
+- **时间**: O(n²)
+- **空间**: O(1) — 不算输出
+
+---
+
+### 方法二：排序 + 哈希集 (HashSet)
+
+**思路**：固定一个数后，用 HashSet 做 2Sum（类似 Two Sum 的哈希表法）。
+
+```python
+def threeSum(nums):
+    nums.sort()
+    result = set()  # 用 set 去重
+
+    for i, a in enumerate(nums):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        seen = set()
+        for j in range(i + 1, len(nums)):
+            b = nums[j]
+            complement = -(a + b)
+            if complement in seen:
+                result.add((a, b, complement))
+            seen.add(b)
+
+    return [list(triplet) for triplet in result]
+```
+
+- **时间**: O(n²)
+- **空间**: O(n) — seen set
+- **评价**: 比双指针法代码短，但去重不如双指针自然
 
 ### 复杂度
 

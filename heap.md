@@ -50,15 +50,33 @@ heapq.heappush(heap, (priority, item))
 解释: 排序后 [6, 5, 4, 3, 2, 1]，第2大是5
 ```
 
-### 思路讲解
+所有解法：
 
-**方法一：堆（面试推荐）**
+---
 
-维护一个大小为 k 的最小堆。遍历所有数：
+### 方法一：直接排序（最简单）
+
+**思路**：排序后直接取倒数第 k 个。
+
+```python
+def findKthLargest(nums, k):
+    nums.sort()
+    return nums[-k]  # 第 k 大 = 升序排序后的倒数第 k 个
+```
+
+- **时间**: O(n log n)
+- **空间**: O(1) 或 O(n) — 取决于排序实现
+- **评价**: 最简单但不是最优，面试官可能让你优化
+
+---
+
+### 方法二：最小堆 ⭐ 面试推荐
+
+**思路**：维护一个大小为 k 的最小堆。堆顶始终是"k 个最大元素中最小的" = 第 k 大。
+
 - 堆中元素 < k 个 → 直接加入
 - 堆已有 k 个 → 如果当前数 > 堆顶，弹出堆顶，加入当前数
-
-最终堆顶就是第 k 大的元素。
+- 最后堆顶就是第 k 大
 
 ```
 nums = [3, 2, 1, 5, 6, 4], k = 2
@@ -70,10 +88,8 @@ i=3, num=5: 5>堆顶2 → 弹出2, 加入5 → 堆=[3,5]
 i=4, num=6: 6>堆顶3 → 弹出3, 加入6 → 堆=[5,6]
 i=5, num=4: 4<堆顶5 → 忽略
 
-堆顶 = 5 → 第2大的元素
+堆顶 = 5 → 第2大的元素 ✓
 ```
-
-### 代码
 
 ```python
 import heapq
@@ -83,25 +99,41 @@ def findKthLargest(nums, k):
     for num in nums:
         heapq.heappush(heap, num)
         if len(heap) > k:
-            heapq.heappop(heap)  # 弹出最小的，保持堆大小为k
-    return heap[0]  # 堆顶是k个最大元素中最小的 = 第k大
+            heapq.heappop(heap)
+    return heap[0]
 ```
 
-**方法二：快速选择（Quick Select）**
+- **时间**: O(n log k) — 每个元素最多一次 push + 一次 pop
+- **空间**: O(k)
 
-类似快速排序，平均 O(n)，最坏 O(n²)。面试提一下思路即可。
+---
+
+### 方法三：快速选择 (Quick Select) — 平均 O(n)
+
+**思路**：类似快速排序的分区思想。每次选一个 pivot，把比 pivot 小的放左边、大的放右边。如果 pivot 刚好在第 (n-k) 位 → 找到；如果 n-k 在 pivot 左边 → 递归左边；否则递归右边。
+
+```
+nums = [3,2,1,5,6,4], k=2, target=4 (len=6, 6-2=4)
+
+分区后: [3,2,1,4,6,5], pivot位置=3
+3 < 4 → 递归右半部分
+右半: [6,5], pivot=5, 位置=4
+4 == 4 → nums[4]=5 → 答案!
+```
 
 ```python
-# 快速选择（了解即可）
 import random
 
 def findKthLargest(nums, k):
-    # 找第 k 大 = 找排序后下标为 len(nums)-k 的元素
-    target = len(nums) - k
+    target = len(nums) - k  # 第 k 大 = 排序后下标 target
 
     def quickSelect(left, right):
+        # 随机选 pivot 防退化为 O(n²)
+        pivot_idx = random.randint(left, right)
+        nums[pivot_idx], nums[right] = nums[right], nums[pivot_idx]
+
         pivot = nums[right]
-        p = left  # 分区点
+        p = left
         for i in range(left, right):
             if nums[i] <= pivot:
                 nums[i], nums[p] = nums[p], nums[i]
@@ -118,10 +150,18 @@ def findKthLargest(nums, k):
     return quickSelect(0, len(nums) - 1)
 ```
 
-### 复杂度
+- **时间**: 平均 O(n)，最坏 O(n²) — 随机 pivot 可避免最坏
+- **空间**: O(log n) — 递归栈
 
-- 堆法：时间 O(n log k)，空间 O(k)
-- 快选：平均时间 O(n)，空间 O(1)
+---
+
+### 三种方法对比
+
+| 方法 | 时间 | 空间 | 何时用 |
+|------|------|------|--------|
+| 排序 | O(n log n) | O(1) | 最简单，适合快速验证 |
+| 最小堆 | O(n log k) | O(k) | k 很小时最优 |
+| 快速选择 | O(n) 平均 | O(log n) | 追求最优时间复杂度 |
 
 ---
 
